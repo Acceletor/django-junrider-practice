@@ -1,0 +1,44 @@
+{% extends 'app_general/components/base.html' %}
+{% block site_title %}promotion registeration | {% endblock %}
+
+{% block content %}
+<section class="content-section content-section-single">
+    <div class="content-container content-container-narrow">
+        <h2 class="content-title">registeration for promotion</h2>
+        <p>Lorem ipsum dolor sit ametdolor sit amet</p>
+        <form class="subscription-form" action="{% url 'subscription' %}" method="post" >
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-field">
+                {{ form.name.label_tag }}
+                {{ form.name}}
+                {{ form.name.errors }}
+        
+            </div>
+            <div class="form-field">
+                {{ form.email.label_tag }}
+                {{ form.email}}
+                {{ form.email.errors }}
+            </div>
+            <div class="form-field">
+                {{ form.food_set.label_tag }}
+                {{ form.food_set }}
+                {{ form.food_set.errors }}
+            </div>
+            <div class="form-field">
+                <label>Read all of the condition</label>
+                <label>
+                    {{ form.accepted }} {{ form.accepted.label }}
+                </label>
+                {{ form.accepted.errors }}
+            </div>
+            <div class="form-field">
+                <button class="button button-primary" type="submit">submit form</button>
+            </div>
+            
+        </form>
+    </div>
+</section>
+
+
+{% endblock %}

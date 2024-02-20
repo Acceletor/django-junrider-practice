@@ -1,0 +1,41 @@
+{% extends 'app_general/components/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="home-landing-section">
+    <h1 class="home-landing-text">JunRider</h1>
+    <h5 class="home-landing-text">Lorem ipsum dolor sit amet</h5>
+    <h6 class="home-landing-text">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</h6>
+    <p>
+      <a class="button" href="{% url 'foods' %}">All menu</a>
+      <a class="button button-primary" href="{% url 'subscription' %}">Register for promotion</a>
+    </p>
+</section>
+<section class="content-section">
+  <div class="content-container">
+    <h4 class="content-title text-center">Description</h4>
+    <div class="grid grid-3">
+
+      <div >
+        <img class="image-block" src="{% static 'app_general/home-about-1.jpg' %}" alt="">  
+        <p>Lorem ipsum dolor sit ameLorem ipsum dolor sit ameLorem ipsum dolor sit ame</p>
+      </div>
+
+      <div>
+        <img class="image-block" src="{% static 'app_general/home-about-2.jpg' %}" alt="">  
+        <p>Lorem ipsum dolor sit ameLorem ipsum dolor sit ameLorem ipsum dolor sit ame</p>
+      </div>
+
+      <div>
+        <img class="image-block" src="{% static 'app_general/home-about-3.jpg' %}" alt="">  
+        <p>Lorem ipsum dolor sit ameLorem ipsum dolor sit ameLorem ipsum dolor sit ame</p>
+      </div>
+    </div>
+    <p class="text-center">
+      <a class="button" href="{% url 'about' %}">About JunRider</a>
+    </p>
+
+  </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'app_general/components/base.html' %}
+{% block site_title %}{{ food.title }} | {% endblock %}
+{% load static %}
+
+
+{% block content %}
+<section class="content-section content-section-single">
+    <div class="content-container">
+        {% if food is not None %}
+            <div class="grid grid-2">
+                <img class="image-block" src="{% static food.image_relative_url %}">
+                <div>
+                    <h3>{{ food.title }}</h3>
+                        {% if food.special_price is not None %}
+                            <p>
+                                <span>{{ food.special_price|floatformat:'g' }} baht </span>
+                                <del class="text-gray">{{ food.price|floatformat:'g' }} baht</del>
+                            </p>
+                        {% else %}
+                            <p>{{ food.price|floatformat:'g' }} baht</p>
+                        {% endif %}
+                    {% if food.is_premium %}
+                        <p>***Premuim</p>
+                    {% endif %}
+                    <p>End of promotion: {{ food.promotion_end_at|date:'j N Y'}}</p>
+                    <p>{{ food.description }}</p>
+                     
+                    <p>
+                        <a class="button button-primary" href="{% url 'subscription' %}">Register for promotion</a>
+                    </p>
+                    
+
+                </div>
+
+                
+             </div>   
+                
+        {% else %}
+            <p>No result</p>
+        {% endif %}  
+    
+</section>
+
+
+
+
+
+
+
+{% endblock %}
+
+

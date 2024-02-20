@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+mysql-connector-python = "*"
+python-dotenv = "*"
+gunicorn = "*"
+whitenoise = "*"
+
+[dev-packages]
+bpython-django = "*"
+ipython = "*"
+windows-curses = "*"
+
+[requires]
+python_version = "3.10"
